@@ -10,7 +10,7 @@ public class CanvasUtils {
         Canvas square = new Canvas(Config.SQUARE_SIZE, Config.SQUARE_SIZE);
         GraphicsContext gc = square.getGraphicsContext2D();
         gc.setFill(color);
-        gc.fillRect(2, 2, 45, 45);  
+        gc.fillOval(2, 2, 30, 30);   
         return square;
     }
 
