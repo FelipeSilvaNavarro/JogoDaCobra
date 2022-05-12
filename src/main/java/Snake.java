@@ -20,7 +20,7 @@ public class Snake {
 
     private void createSnake() {
         // Pintar a cabeça da cobra de azul
-        this.head = CanvasUtils.buildSquare(Color.GREEN);
+        this.head = CanvasUtils.buildSnake(Color.GREEN);
         // Setar a cobra no meio da tela
         resetPosition();
     }
@@ -82,7 +82,7 @@ public class Snake {
     }
 
     public void eat(Cenario scenario) {
-        Canvas bodyPart = CanvasUtils.buildSquare(Color.rgb(0, 51, 0));
+        Canvas bodyPart = CanvasUtils.buildSnake(Color.rgb(0, 51, 0));
         scenario.add(bodyPart);
         this.body.add(bodyPart);
     }

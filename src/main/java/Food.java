@@ -12,7 +12,7 @@ public class Food {
         setRandomPosition();
     }
     private void createFood() {
-        this.food = CanvasUtils.buildSquare(Color.YELLOW);
+        this.food = CanvasUtils.buildFood(Color.RED);
     }
 
     public void setRandomPosition() {
