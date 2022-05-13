@@ -27,8 +27,7 @@ public class TryAgainButton extends VBox {
         this.setAlignment(Pos.CENTER);
         
         tryAgain.getStyleClass().add("gameOverButton");
-        tryAgain.getStyleClass().add("botao:focused");
         gameOver.getStyleClass().add("gameOverLabel");
-        getStyleClass().add("gameOverCena");
+        getStyleClass().add("gameOverScene");
     }
 }
