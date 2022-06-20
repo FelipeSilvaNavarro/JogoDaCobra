@@ -1,4 +1,4 @@
-package main.java;
+package main.java.visao;
 
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -7,15 +7,19 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import main.java.modelo.Cobra;
+import main.java.modelo.Comida;
+import main.java.modelo.Config;
+import main.java.modelo.LoopConfig;
 
 public class Cenario {
 
     private final Scene scene;
     private final javafx.scene.Group root = new javafx.scene.Group();
-    private final Snake snake;
-    private final Food food;
+    private final Cobra cobra;
+    private final Comida comida;
 
-    public Cenario(Stage primaryStage, Snake snake, Food food) {
+    public Cenario(Stage primaryStage, Cobra cobra, Comida comida) {
         this.scene = new Scene(root, Config.WIDTH, Config.HEIGHT);
 
         String css = getClass().getResource("StyleSheets.css").toExternalForm();
@@ -27,23 +31,23 @@ public class Cenario {
         primaryStage.setTitle("Snake Game - By Felipe Navarro");
         primaryStage.show();
 
-        this.snake = snake;
-        this.food = food;
+        this.cobra = cobra;
+        this.comida = comida;
 
-        root.getChildren().add(snake.getHead());
-        root.getChildren().add(food.getFood());
+        root.getChildren().add(cobra.getHead());
+        root.getChildren().add(comida.getFood());
     }
 
     public void setKeyPressed(EventHandler<? super KeyEvent> action) {
         this.scene.setOnKeyPressed(action);
     }
 
-    public void showGameOver(EventLoop eventLoop) {
+    public void showGameOver(LoopConfig loopConfig) {
         TryAgainButton tryAgainButton = new TryAgainButton(e -> {
             clean();
-            add(this.snake.reset());
-            add(this.food.getFood());
-            eventLoop.starLoop();
+            add(this.cobra.reset());
+            add(this.comida.getFood());
+            loopConfig.starLoop();
         });
 
         this.root.getChildren().add(tryAgainButton);

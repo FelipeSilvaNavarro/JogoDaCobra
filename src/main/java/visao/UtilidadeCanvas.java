@@ -1,10 +1,11 @@
-package main.java;
+package main.java.visao;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
+import main.java.modelo.Config;
 
-public class CanvasUtils {
+public class UtilidadeCanvas {
 
     public static Canvas buildSnake(Paint color) {
         Canvas square = new Canvas(Config.SQUARE_SIZE, Config.SQUARE_SIZE);

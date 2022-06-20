@@ -1,28 +1,29 @@
-package main.java;
+package main.java.modelo;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
+import main.java.visao.UtilidadeCanvas;
 
-public class Food {
+public class Comida {
 
     private Canvas food;
 
-    public Food() {
+    public Comida() {
         createFood();
         setRandomPosition();
     }
     private void createFood() {
-        this.food = CanvasUtils.buildFood(Color.RED);
+        this.food = UtilidadeCanvas.buildFood(Color.RED);
     }
 
     public void setRandomPosition() {
-        this.food.setTranslateX(randomNumber(0, main.java.Config.WIDTH - main.java.Config.SQUARE_SIZE));
-        this.food.setTranslateY(randomNumber(0, main.java.Config.HEIGHT - main.java.Config.SQUARE_SIZE));
+        this.food.setTranslateX(randomNumber(0, Config.WIDTH - Config.SQUARE_SIZE));
+        this.food.setTranslateY(randomNumber(0, Config.HEIGHT - Config.SQUARE_SIZE));
     }
 
     private Integer randomNumber(Integer min, Integer max) {
         int value = (int) (Math.random() * ((max - min) + 1)) + min;
-        return value - (value % main.java.Config.SQUARE_SIZE);
+        return value - (value % Config.SQUARE_SIZE);
     }
 
     public Canvas getFood() {

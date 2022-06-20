@@ -1,4 +1,4 @@
-package main.java;
+package main.java.visao;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import main.java.modelo.Config;
 
 public class TryAgainButton extends VBox {
 
@@ -22,8 +23,8 @@ public class TryAgainButton extends VBox {
         tryAgain.setOnAction(action);
         this.getChildren().add(tryAgain);
         
-        this.setMinWidth(main.java.Config.WIDTH);
-        this.setMinHeight(main.java.Config.HEIGHT);
+        this.setMinWidth(Config.WIDTH);
+        this.setMinHeight(Config.HEIGHT);
         this.setAlignment(Pos.CENTER);
         
         tryAgain.getStyleClass().add("gameOverButton");

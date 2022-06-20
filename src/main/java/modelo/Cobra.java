@@ -1,4 +1,4 @@
-package main.java;
+package main.java.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,27 +7,29 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import main.java.visao.Cenario;
+import main.java.visao.UtilidadeCanvas;
 
-public class Snake {
+public class Cobra {
 
     private final List<Canvas> body = new ArrayList<>();
     private final List<Integer[]> positionHistory = new ArrayList<>();
     private Canvas head;
 
-    public Snake() {
+    public Cobra() {
         createSnake();
     }
 
     private void createSnake() {
         // Pintar a cabeça da cobra de azul
-        this.head = CanvasUtils.buildSnake(Color.GREEN);
+        this.head = UtilidadeCanvas.buildSnake(Color.GREEN);
         // Setar a cobra no meio da tela
         resetPosition();
     }
 
     private void resetPosition() {
-        this.head.setTranslateX(main.java.Config.WIDTH / 2 - main.java.Config.SQUARE_SIZE);
-        this.head.setTranslateY(main.java.Config.HEIGHT / 2 - main.java.Config.SQUARE_SIZE);
+        this.head.setTranslateX(Config.WIDTH / 2 - Config.SQUARE_SIZE);
+        this.head.setTranslateY(Config.HEIGHT / 2 - Config.SQUARE_SIZE);
     }
 
 
@@ -76,13 +78,13 @@ public class Snake {
 
     private void changeColor(Paint color) {
         GraphicsContext gc = this.getHead().getGraphicsContext2D();
-        gc.clearRect(0, 0, main.java.Config.SQUARE_SIZE, main.java.Config.SQUARE_SIZE);
+        gc.clearRect(0, 0, Config.SQUARE_SIZE, Config.SQUARE_SIZE);
         gc.setFill(color);
-        gc.fillRect(0, 0, main.java.Config.SQUARE_SIZE, main.java.Config.SQUARE_SIZE);
+        gc.fillRect(0, 0, Config.SQUARE_SIZE, Config.SQUARE_SIZE);
     }
 
     public void eat(Cenario scenario) {
-        Canvas bodyPart = CanvasUtils.buildSnake(Color.rgb(0, 51, 0));
+        Canvas bodyPart = UtilidadeCanvas.buildSnake(Color.rgb(0, 51, 0));
         scenario.add(bodyPart);
         this.body.add(bodyPart);
     }
