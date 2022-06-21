@@ -1,4 +1,4 @@
-package main.java.modelo;
+package main.java.visao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import main.java.visao.Cenario;
-import main.java.visao.UtilidadeCanvas;
+import main.java.modelo.Config;
+import main.java.modelo.UtilidadeCanvas;
 
 public class Cobra {
 

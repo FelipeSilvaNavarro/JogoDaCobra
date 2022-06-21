@@ -4,6 +4,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.input.KeyCode;
 import main.java.visao.Cenario;
+import main.java.visao.Cobra;
+import main.java.visao.Comida;
 
 public class LoopConfig {
 

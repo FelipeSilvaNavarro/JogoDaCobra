@@ -2,8 +2,6 @@ package main.java.visao;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import main.java.modelo.Cobra;
-import main.java.modelo.Comida;
 import main.java.modelo.LoopConfig;
 
 public class Jogo extends Application {

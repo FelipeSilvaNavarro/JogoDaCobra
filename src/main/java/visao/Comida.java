@@ -1,8 +1,9 @@
-package main.java.modelo;
+package main.java.visao;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
-import main.java.visao.UtilidadeCanvas;
+import main.java.modelo.Config;
+import main.java.modelo.UtilidadeCanvas;
 
 public class Comida {
 

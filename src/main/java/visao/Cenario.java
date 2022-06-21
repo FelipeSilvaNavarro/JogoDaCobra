@@ -3,14 +3,16 @@ package main.java.visao;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import main.java.modelo.Cobra;
-import main.java.modelo.Comida;
 import main.java.modelo.Config;
 import main.java.modelo.LoopConfig;
+
+import java.awt.*;
+import java.util.Objects;
 
 public class Cenario {
 
@@ -21,9 +23,10 @@ public class Cenario {
 
     public Cenario(Stage primaryStage, Cobra cobra, Comida comida) {
         this.scene = new Scene(root, Config.WIDTH, Config.HEIGHT);
+        Button pause = new Button();
 
-        String css = getClass().getResource("StyleSheets.css").toExternalForm();
-        Font.loadFont(getClass().getResource("Koulen-Regular.ttf").toExternalForm(), 10);
+        String css = Objects.requireNonNull(getClass().getResource("../modelo/StyleSheets.css")).toExternalForm();
+        Font.loadFont(Objects.requireNonNull(getClass().getResource("../modelo/Koulen-Regular.ttf")).toExternalForm(), 10);
         scene.getStylesheets().add(css);
         scene.setFill(Color.GREY);
         

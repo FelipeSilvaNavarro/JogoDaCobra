@@ -1,4 +1,4 @@
-package main.java.visao;
+package main.java.modelo;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
