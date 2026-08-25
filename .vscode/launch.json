@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "Jogo",
+            "request": "launch",
+            "mainClass": "main.java.visao.Jogo",
+            "projectName": "JogoDaCobra_56d24a51"
+        },
         {
             "name": "Java",
             "type": "java",
